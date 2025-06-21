@@ -28,7 +28,7 @@
 require_once('db.php');
 
 if (isset($_COOKIE['User'])){
-	header("Location: /profile.php");
+	header("Location: /index.php");
 	exit();
 }
 
@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
 
 	if (mysqli_num_rows($result) == 1){
 		setcookie("User", $login, time()+7200);
-		header("Location: /profile.php");
+		header("Location: /index.php");
 	}
 	else {
 		echo "Incorrect username or password";
